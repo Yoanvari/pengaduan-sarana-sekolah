@@ -1,59 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Pengaduan Sarana Sekolah
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Pengaduan Sarana Sekolah adalah platform berbasis web yang dikembangkan untuk memfasilitasi siswa dalam melaporkan masalah atau memberikan aspirasi terkait sarana dan prasarana di lingkungan sekolah. Proyek ini dibangun sebagai pemenuhan **Tugas Uji Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak Tahun Pelajaran 2025/2026**.
 
-## About Laravel
+Aplikasi ini menggunakan sistem *Multi-Authentication* untuk membedakan hak akses antara **Admin** (petugas/pihak sekolah) dan **Siswa**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi ini dibangun menggunakan teknologi modern untuk memastikan performa, keamanan, dan kemudahan pengembangan:
 
-## Learning Laravel
+-   **Framework:** Laravel 12
+-   **Bahasa Pemrograman:** PHP (minimal versi 8.2)
+-   **Database:** MySQL
+-   **Styling:** Custom CSS (Vanilla)
+-   **Asset Bundling:** Vite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Fitur Utama
 
-## Laravel Sponsors
+Aplikasi ini dibagi menjadi dua portal utama dengan fitur yang disesuaikan untuk masing-masing peran pengguna:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 👨‍🎓 Portal Siswa
+Siswa memiliki akses untuk melaporkan dan memantau aspirasi mereka.
+-   **Login Siswa:** Autentikasi aman menggunakan NIS dan Password.
+-   **Dashboard Siswa:** Ringkasan dan status dari semua aspirasi yang pernah diajukan.
+-   **Input Aspirasi:** Formulir pengajuan pengaduan yang mencakup pemilihan kategori, detail lokasi, dan keterangan masalah.
+-   **Tracking Status:** Memantau perkembangan laporan (Menunggu, Proses, Selesai) beserta *feedback* atau tanggapan dari Admin.
 
-### Premium Partners
+### 👨‍💼 Portal Admin
+Admin memiliki kontrol penuh untuk mengelola laporan yang masuk.
+-   **Login Admin:** Autentikasi khusus untuk administrator.
+-   **Dashboard Admin:** Menampilkan seluruh data aspirasi yang masuk dari semua siswa.
+-   **Filter Data:** Kemampuan untuk memfilter laporan berdasarkan rentang waktu (bulan/tanggal) atau berdasarkan kategori pelaporan.
+-   **Manajemen Aspirasi (Edit/Update):** Memproses laporan, mengubah status penyelesaian, dan memberikan *feedback* langsung kepada pelapor.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Panduan Instalasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Untuk menjalankan aplikasi ini di lingkungan lokal Anda (Localhost), ikuti langkah-langkah instalasi standar Laravel berikut:
 
-## Code of Conduct
+1.  **Clone Repositori**
+    ```bash
+    git clone https://github.com/username-anda/pengaduan-sarana-sekolah.git
+    cd pengaduan-sarana-sekolah
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2.  **Install Dependensi PHP (Composer)**
+    ```bash
+    composer install
+    ```
 
-## Security Vulnerabilities
+3.  **Setup Environment File (.env)**
+    Salin file konfigurasi contoh dan sesuaikan pengaturan database Anda.
+    ```bash
+    cp .env.example .env
+    ```
+    *Catatan: Buka file `.env` dan atur `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` sesuai dengan konfigurasi MySQL lokal Anda.*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4.  **Generate Application Key**
+    ```bash
+    php artisan key:generate
+    ```
 
-## License
+5.  **Migrasi Database dan Seeding**
+    Jalankan perintah berikut untuk membuat struktur tabel dan mengisi data awal (seeder) seperti akun admin dan data kategori.
+    ```bash
+    php artisan migrate --seed
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6.  **Install Dependensi Frontend (NPM)**
+    ```bash
+    npm install
+    npm run build
+    ```
+
+7.  **Jalankan Local Development Server**
+    ```bash
+    php artisan serve
+    ```
+    Aplikasi sekarang dapat diakses melalui browser di `http://localhost:8000`.
+
+---
+
+## 🗄️ Struktur Database
+
+Struktur database telah dirancang dan dioptimasi menggunakan fitur bawaan Laravel (Eloquent Relationships dan Eager Loading) untuk memastikan efisiensi *query*, terutama saat menampilkan data berelasi di dashboard.
+
+Berikut adalah ringkasan struktur tabel yang digunakan:
+
+| Nama Tabel | Deskripsi & Kolom Utama |
+| :--- | :--- |
+| `admins` | Menyimpan data administrator. <br> **Kolom:** `id`, `nama`, `username`, `password`. |
+| `siswas` | Menyimpan data siswa yang berhak melakukan login. Menggunakan `nis` sebagai *Primary Key*. <br> **Kolom:** `nis` (PK), `nama`, `kelas`, `password`. |
+| `kategoris` | Data referensi (Master) untuk jenis pengaduan (misal: Kebersihan, Kerusakan Fasilitas). <br> **Kolom:** `id`, nama/keterangan kategori. |
+| `aspirasis` | Tabel transaksi utama yang menyimpan pengaduan siswa. Memiliki *Foreign Keys* ke tabel `siswas`, `kategoris`, dan `admins`. <br> **Kolom:** `id`, `nis`, `kategori_id`, `lokasi`, `keterangan`, `status` (Menunggu/Proses/Selesai), `feedback`, `admin_id`. |
+
+*Catatan: Constraint `CASCADE` dan `SET NULL` pada Foreign Key telah diterapkan pada tingkat database untuk menjaga integritas data (Referential Integrity).*
+
+---
+
+**Dibuat untuk keperluan Uji Kompetensi Keahlian (UKK) RPL © 2025/2026**
